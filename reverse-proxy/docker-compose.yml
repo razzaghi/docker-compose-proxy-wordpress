@@ -8,10 +8,10 @@ services:
     ports:
       - 80:80
 
-  networks:
-    nadgroup:
-      external:
-        name: nadgroup_default
-    blog:
-      external:
-        name: blog_default
+networks:
+  nadgroup:
+    external:
+      name: nadgroup_default
+  blog:
+    external:
+      name: blog_default
