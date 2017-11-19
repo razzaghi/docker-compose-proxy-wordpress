@@ -4,7 +4,7 @@ services:
     build: ./
     networks:
       - nadgroup
-      - blog
+      - nadgroupblog
     ports:
       - 80:80
 
@@ -12,6 +12,6 @@ services:
     nadgroup:
       external:
         name: nadgroup_default
-    blog:
+    nadgroupblog:
       external:
         name: blog_default
