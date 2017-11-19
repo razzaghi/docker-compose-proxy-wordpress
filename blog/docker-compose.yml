@@ -35,4 +35,6 @@ services:
       MYSQL_ROOT_PASSWORD: nadgroup@@9
       MYSQL_DATABASE: wordpressdb
 volumes:
-    blogsource:./wordpress
+    blogsource:
+        external:
+            name: ./wordpress
