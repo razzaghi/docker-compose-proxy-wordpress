@@ -10,6 +10,8 @@ services:
      - wordpress
     expose:
       - "80"
+    ports:
+      - 80:8080
     environment:
       POST_MAX_SIZE: 128m
   db:
