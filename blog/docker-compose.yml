@@ -5,7 +5,7 @@ services:
     links:
       - db:mysql
     volumes:
-      - ./wordpress:/var/www/html
+      - blogsource:/var/www/html
     environment:
       - WORDPRESS_DB_NAME=wordpressdb
       - WORDPRESS_TABLE_PREFIX=wp_
@@ -17,8 +17,7 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./logs/nginx:/var/log/nginx
-    volumes_from:
-          - wordpress
+      - blogsource:/var/www/html
     links:
       - wordpress
     depends_on:
@@ -35,3 +34,5 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: nadgroup@@9
       MYSQL_DATABASE: wordpressdb
+volumes:
+    blogsource:./wordpress
