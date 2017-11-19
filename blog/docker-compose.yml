@@ -8,7 +8,7 @@ services:
     image: raulr/nginx-wordpress
     links:
      - wordpress
-    volume_froms:
+    volumes_from:
      - wordpress
     expose:
       - "80"
