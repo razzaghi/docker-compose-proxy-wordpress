@@ -8,8 +8,8 @@ services:
     image: raulr/nginx-wordpress
     links:
      - wordpress
-    volumes_from:
-     - services:wordpress
+    volumes:
+     - wordpress
     expose:
       - "80"
     ports:
