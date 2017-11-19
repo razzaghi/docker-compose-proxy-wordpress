@@ -1,0 +1,6 @@
+nadgroup:
+  image: nginx:1.12
+  volumes:
+    - .:/usr/share/nginx/html/
+  expose:
+    - "80"

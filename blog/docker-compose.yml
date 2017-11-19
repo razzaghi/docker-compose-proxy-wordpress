@@ -2,7 +2,7 @@ wordpress:
   image: wordpress:fpm
   links:
     - db:mysql
-nginx:
+nadgroup:
   image: raulr/nginx-wordpress
   links:
    - wordpress
@@ -15,4 +15,4 @@ nginx:
 db:
   image: mariadb
   environment:
-    MYSQL_ROOT_PASSWORD: Ehsanehsan67
+    MYSQL_ROOT_PASSWORD: nadgroup@@9

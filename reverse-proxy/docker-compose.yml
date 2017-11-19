@@ -1,15 +1,15 @@
 proxy:
   build: ./
   networks:
-    - ostadkar
-    - ostadkar_blog
+    - site
+    - blog
   ports:
     - 80:80
 
 networks:
   site1:
     external:
-      name: ostadkar
+      name: site
   site2:
     external:
-      name: ostadkar_blog
+      name: blog
