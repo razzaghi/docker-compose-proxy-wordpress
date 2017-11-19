@@ -3,7 +3,7 @@ services:
     image: wordpress:fpm
     links:
       - db:mysql
-  nadgroup:
+  app:
     image: raulr/nginx-wordpress
     links:
      - wordpress
