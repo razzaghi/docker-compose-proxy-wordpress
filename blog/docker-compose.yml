@@ -1,0 +1,18 @@
+wordpress:
+  image: wordpress:fpm
+  links:
+    - db:mysql
+nginx:
+  image: raulr/nginx-wordpress
+  links:
+   - wordpress
+  volumes_from:
+   - wordpress
+  expose:
+    - "80"
+  environment:
+    POST_MAX_SIZE: 128m
+db:
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: Ehsanehsan67

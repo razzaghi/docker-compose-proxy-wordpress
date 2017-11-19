@@ -1,0 +1,6 @@
+ostadkar:
+  image: nginx:1.12
+  volumes:
+    - /root/ostakar-website/out:/usr/share/nginx/html/
+  expose:
+    - "80"
