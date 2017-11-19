@@ -3,13 +3,13 @@ services:
   proxy:
     build: ./
     networks:
-      - nadgroup
+      - nadgroupsite
       - nadgroupblog
     ports:
       - 80:80
 
   networks:
-    nadgroup:
+    nadgroupsite:
       external:
         name: nadgroup_default
     nadgroupblog:
