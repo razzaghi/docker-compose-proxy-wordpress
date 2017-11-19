@@ -1,13 +1,11 @@
 version: '3'
 services:
-  wordpress:
-    image: wordpress:fpm
-    links:
-      - db:mysql
   app:
-    image: raulr/nginx-wordpress
+    image: wordpress-nginx
     links:
-     - wordpress
+     - db:mysql
+    depends_on:
+     - db
     volumes:
      - ./wordpress:/var/www/html
     expose:
@@ -19,4 +17,8 @@ services:
   db:
     image: mariadb
     environment:
+    environment:
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress@@9
+      MYSQL_DATABASE: wordpress
       MYSQL_ROOT_PASSWORD: nadgroup@@9
