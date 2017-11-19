@@ -1,22 +1,22 @@
 version: '3'
-wordpress:
-  image: wordpress:fpm
-  links:
-    - db:mysql
-db:
-  image: mariadb
-  environment:
-    MYSQL_ROOT_PASSWORD: nadgroup@@9
 services:
+  wordpress:
+    image: wordpress:fpm
+    links:
+      - db:mysql
   app:
     image: raulr/nginx-wordpress
     links:
      - wordpress
     volumes_from:
-     - wordpress
+     - services:wordpress
     expose:
       - "80"
     ports:
       - 8080:80
     environment:
       POST_MAX_SIZE: 128m
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: nadgroup@@9
