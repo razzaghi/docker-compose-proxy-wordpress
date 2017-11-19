@@ -9,7 +9,7 @@ services:
     links:
      - wordpress
     volumes_from:
-     - wordpress
+     - services.wordpress
     expose:
       - "80"
     environment:
