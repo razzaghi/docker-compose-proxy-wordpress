@@ -8,8 +8,6 @@ services:
     image: raulr/nginx-wordpress
     links:
      - wordpress
-    volumes_from:
-     - services.wordpress
     expose:
       - "80"
     environment:
