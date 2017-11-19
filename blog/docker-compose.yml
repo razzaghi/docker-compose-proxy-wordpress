@@ -9,7 +9,7 @@ services:
     links:
      - wordpress
     volumes:
-     - wordpress
+     - ./wordpress:/var/www/html
     expose:
       - "80"
     ports:
