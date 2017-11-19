@@ -17,7 +17,7 @@ services:
     volumes:
       - ./nginx:/etc/nginx/conf.d
       - ./logs/nginx:/var/log/nginx
-    volumes-from:
+    volumes_from:
           - wordpress
     links:
       - wordpress
