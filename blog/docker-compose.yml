@@ -5,21 +5,23 @@ services:
     links:
       - db:mysql
     volumes:
-        - ./wordpress:/var/www/html
+      - ./wordpress:/var/www/html
     environment:
-        - WORDPRESS_DB_NAME=wordpressdb
-        - WORDPRESS_TABLE_PREFIX=wp_
-        - WORDPRESS_DB_HOST=mysql
-        - WORDPRESS_DB_PASSWORD=nadgroup@@9
+      - WORDPRESS_DB_NAME=wordpressdb
+      - WORDPRESS_TABLE_PREFIX=wp_
+      - WORDPRESS_DB_HOST=mysql
+      - WORDPRESS_DB_PASSWORD=nadgroup@@9
     restart: always
   app:
     image: nginx:latest
     volumes:
-        - ./nginx:/etc/nginx/conf.d
-        - ./logs/nginx:/var/log/nginx
-        - ./wordpress:/var/www/html
+      - ./nginx:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+      - ./wordpress:/var/www/html
     links:
-        - wordpress
+      - wordpress
+    depends_on:
+      - wordpress
     restart: always
     expose:
       - "80"
